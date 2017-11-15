@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <title>感冒症状</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<section class="main" id="question">
+    <div class="wrap top">
+        <div class="res_name clear">
+            <h3 class="float h3">感冒症状</h3>
+            <span>问诊编号 <br>
+            199FE4
+        </span>
+        </div>
+        <p class="explain"><span class="mi">*</span>每个问题都会影响问诊结果，请仔细阅读问题及各
+            个答案，并根据实际情况慎重选择</p>
+    </div>
+    <div class="que_bottom">
+        <h4 class="h4">自从这些症状出现后，她有过呼吸困难吗？</h4>
+        <label for="boy">
+            <input type="radio" id="boy" name="sex">有
+        </label>
+        <label for="girl">
+            <input type="radio" id="girl" name="sex">无
+        </label>
+    </div>
+    <div class="double_btn clear">
+        <div class="btn_wrap">
+            <span class="back btn">返回</span>
+        </div>
+
+        <div class="btn_wrap ">
+            <a href="conclusion.html"> <span class="goon btn">继续</span></a>
+        </div>
+
+    </div>
+    <div class="start">
+        <span class="btn">重新测评</span>
+    </div>
+</section>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/public.js"></script>
+<script>
+    $('input:checked').parent('label').addClass('on');
+    $(document.body).on('click', function(){
+        $('body').find('input[type=radio]').each(function(i){
+            if($(this).prop('checked')){
+                $(this).parent().addClass("on").css("color","#3967c1")
+
+            }else{
+                $(this).parent().removeClass("on")
+
+            }
+        });
+    });
+</script>
+</body>
+</html>

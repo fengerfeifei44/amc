@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>惠每智能问诊系统</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<section class="main">
+    <div class="wrap top">
+        <div class="res_name clear">
+            <h3 class="float h3" style="font-weight: 700">感冒症状</h3>
+        </div>
+
+    </div>
+    <div class="que_bottom">
+        <h4 class="h4">参与这次评估的是您本人还是其他人？</h4>
+        <label for="boy">
+            <input type="radio" id="boy" name="sex">本人
+        </label>
+        <label for="girl">
+            <input type="radio" id="girl" name="sex">其他人
+        </label>
+    </div>
+    <div class="que_bottom">
+        <h4 class="h4">性别</h4>
+        <label for="boy1">
+            <input type="radio" id="boy1" name="sex1">男
+        </label>
+        <label for="girl">
+            <input type="radio" id="girl" name="sex1">女
+        </label>
+    </div>
+    <div class="que_bottom">
+        <h4 class="h4">出生日期：</h4>
+        <input type="date" style="box-sizing:border-box;padding-left:10px;margin-top:10px;display:block;width: 90%;line-height: 24px;border-radius: 5px;border: 1px solid #dcdcdc">
+       <!-- <select name="a" id="a" value="年">
+            <option value="年">年</option>
+        </select>
+        <select name="b" id="b">年</select>
+        <select name="c" id="c">年</select>-->
+       <!-- <label for="boy1">
+            <input type="radio" id="boy1" name="sex1">男
+        </label>
+        <label for="girl">
+            <input type="radio" id="girl" name="sex1">女
+        </label>-->
+    </div>
+    <div class="que_bottom" style="margin-top: 10px">
+        <h4 class="h4" >用户ID：</h4>
+        <input type="text" placeholder="请输入用户ID" style="box-sizing:border-box;padding-left:10px;font-size:14px;margin-top:10px;display:block;width: 90%;line-height: 24px;border-radius: 5px;border: 1px solid #dcdcdc">
+
+    </div>
+    <div class="double_btn clear" style="margin-top: 40px">
+        <div class="btn_wrap">
+            <span class="back btn">返回</span>
+        </div>
+
+        <div class="btn_wrap ">
+            <a href="question.html"><span class="goon btn">继续</span></a>
+        </div>
+
+    </div>
+    <div class="start">
+        <span class="btn">重新测评</span>
+    </div>
+</section>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/public.js"></script>
+<script>
+    $('input:checked').parent('label').addClass('on');
+    $(document.body).on('click', function(){
+        $('body').find('input[type=radio]').each(function(i){
+            if($(this).prop('checked')){
+                $(this).parent().addClass("on").css("color","#3967c1")
+
+            }else{
+                $(this).parent().removeClass("on")
+
+            }
+        });
+    });
+</script>
+</body>
+</html>
